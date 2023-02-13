@@ -1,5 +1,6 @@
 [package]
 authors = ["Joep Meindertsma <joep@ontola.io>"]
+description = "A simple `Server-Timing` header crate. No dependencies."
 edition = "2021"
 license = "MIT"
 name = "simple-server-timing-header"
