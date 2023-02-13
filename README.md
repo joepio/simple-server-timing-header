@@ -1,4 +1,6 @@
 # simple-server-timing-header
+[![crates.io](https://img.shields.io/crates/v/simple-server-timing-header.svg)](https://crates.io/crates/simple-server-timing-header)
+[![Documentation](https://docs.rs/simple-server-timing-header/badge.svg)](https://docs.rs/simple-server-timing-header)
 
 Lightweight zero-dependency Rust crate that adds a `Server-Timing` header to the response of a request.
 
