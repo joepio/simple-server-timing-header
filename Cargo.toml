@@ -4,6 +4,6 @@ description = "A simple `Server-Timing` header crate. No dependencies."
 edition = "2021"
 license = "MIT"
 name = "simple-server-timing-header"
-version = "0.1.0"
+version = "0.1.1"
 
 [dependencies]

@@ -38,7 +38,8 @@ impl Timer {
         }
     }
 
-    /// Adds a named measurement, counting from the last one
+    /// Adds a named measurement, counting from the last one.
+    /// Only alphanumeric characters are allowed, other characters are replaced with underscores.
     pub fn add(&mut self, name: &str) {
         let now = Instant::now();
         let duration = now.duration_since(self.last).as_millis();
@@ -60,7 +61,9 @@ impl Timer {
         let mut out = String::new();
         use std::fmt::Write;
         for timing in self.timings.iter() {
-            _ = write!(out, "{};dur={}, ", timing.name, timing.duration);
+            // Special characters and spaces are not properly parsed, so we replace them with underscores
+            let name = timing.name.replace(|c: char| !c.is_alphanumeric(), "_");
+            _ = write!(out, "{};dur={}, ", name, timing.duration);
         }
         // remove the trailing ", "
         out.pop();
@@ -84,7 +87,7 @@ mod test {
     fn test() {
         let mut timer = Timer::new();
         // ... do some stuff
-        timer.add("parse_headers");
+        timer.add("parse headers");
         // ... do some more stuff
         timer.add("get_db_data");
         // Generate the header value
