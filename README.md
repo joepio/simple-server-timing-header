@@ -19,4 +19,4 @@ fn handle_request() {
 }
 ```
 
-![Example of server-timing in Chrome dev tools](./image.png)
+![Example of server-timing in Chrome dev tools](https://github.com/joepio/simple-server-timing-header/raw/master/image.png)
